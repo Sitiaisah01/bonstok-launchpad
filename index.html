@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bonstok — Bonstok Token (BSTK) on Ammora · GIWA Sepolia</title>
+<meta name="description" content="Bonstok Token (BSTK) — a community launchpad token issued on the Ammora protocol, GIWA Sepolia. Config 87, bonding curve live.">
+<style>
+  :root{
+    --ink:#17251d; --muted:#5c6f63; --paper:#f7f5ef; --card:#fffdf8;
+    --line:#e3ddcd; --accent:#1d7a4f; --accent-soft:#e5f2e9; --gold:#c9a227;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink)}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 20px 64px}
+  header{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .brand{font-size:34px;letter-spacing:.5px;font-weight:700}
+  .brand span{color:var(--accent)}
+  .tag{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:2px}
+  .hero{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:32px 30px}
+  .hero h1{margin:0 0 8px;font-size:30px;line-height:1.2}
+  .hero p{margin:0;color:var(--muted);font-size:16px;line-height:1.55;max-width:60ch}
+  .badge{display:inline-block;margin-bottom:14px;padding:4px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:1px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px}
+  .cell{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .cell h3{margin:0 0 8px;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:400}
+  .cell .v{font-size:17px;word-break:break-all;line-height:1.45}
+  .mono{font-family:ui-monospace,Menlo,monospace;font-size:13.5px}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent)}
+  a:hover{border-bottom-style:solid}
+  .live{margin-top:14px;background:var(--ink);color:#eef3ee;border-radius:14px;padding:24px 30px}
+  .live h2{margin:0 0 12px;font-size:18px;font-weight:400;letter-spacing:.4px}
+  .live .row{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid #2c4034;font-family:ui-monospace,Menlo,monospace;font-size:13.5px;flex-wrap:wrap}
+  .live .row:last-child{border-bottom:none}
+  .live .k{color:#9db8a7}
+  footer{margin-top:30px;color:var(--muted);font-size:13.5px;line-height:1.6}
+  .gold{color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">Bonstok<span>.</span></div>
+    <div class="tag">Ammora Launchpad · GIWA Sepolia</div>
+  </header>
+
+  <section class="hero">
+    <div class="badge">● Bonding curve — Active</div>
+    <h1>Bonstok Token <span class="gold">(BSTK)</span></h1>
+    <p>Bonstok is a small community token issued on the Ammora protocol&apos;s segmented
+       bonding curve. It was created with a self-built TypeScript implementation of the
+       Ammora SDK: a dedicated team config, the token launch, and the first buy were
+       executed atomically on GIWA Sepolia — no graduation, the curve simply trades.</p>
+  </section>
+
+  <div class="grid">
+    <div class="cell"><h3>Token</h3><div class="v mono"><a href="https://sepolia-explorer.giwa.io/token/0x7F8f74494B18fC25fF9Dd5105Fb370ca193EC7b8" target="_blank" rel="noopener">0x7F8f74494B18fC25fF9Dd5105Fb370ca193EC7b8</a></div></div>
+    <div class="cell"><h3>Bonding curve (ALC)</h3><div class="v mono"><a href="https://sepolia-explorer.giwa.io/address/0x72B8c21115522A76b5794f47E375CfE8d94E2D8e" target="_blank" rel="noopener">0x72B8c21115522A76b5794f47E375CfE8d94E2D8e</a></div></div>
+    <div class="cell"><h3>Team config</h3><div class="v">Config ID <strong>87</strong><br><span class="mono" style="font-size:12px">0x70f07abe…f448</span></div></div>
+    <div class="cell"><h3>Network</h3><div class="v">GIWA Sepolia<br><span class="mono">chain 91342</span></div></div>
+    <div class="cell"><h3>Decimals / quote</h3><div class="v">9 decimals · WETH quote<br><span class="mono" style="font-size:12px">migration threshold 0.05 WETH</span></div></div>
+    <div class="cell"><h3>Creator</h3><div class="v mono"><a href="https://sepolia-explorer.giwa.io/address/0x0d5f67a80ce5eA5Ab29175938daA07b626E80f0B" target="_blank" rel="noopener">0x0d5f…80f0B</a></div></div>
+  </div>
+
+  <section class="live">
+    <h2>Launch record — read live from the chain</h2>
+    <div class="row"><span class="k">block</span><span id="blk">…</span></div>
+    <div class="row"><span class="k">total supply</span><span id="supply">…</span></div>
+    <div class="row"><span class="k">first buy</span><span>0.0005 WETH → 961,534.725971732 BSTK</span></div>
+    <div class="row"><span class="k">launch tx</span><span><a style="color:#cfe6d6" href="https://sepolia-explorer.giwa.io/tx/0xf56d4d5ada76366f59f7317ba790f05c5420cfe9427ce45e98344844bd416ec1" target="_blank" rel="noopener">0xf56d4d5a…6ec1</a></span></div>
+    <div class="row"><span class="k">curve status</span><span>Active · not graduated</span></div>
+  </section>
+
+  <footer>
+    Bonstok is an Ammora Builder Mission project (Season 2). The token lives on a
+    testnet and exists to demonstrate a working launchpad build — config, issuance,
+    and first trade — end to end. Contract data above is verifiable on the
+    GIWA Sepolia explorer.
+  </footer>
+</div>
+<script>
+  // Minimal live reads straight from the GIWA Sepolia RPC (no libraries):
+  // current block + BSTK totalSupply, with the baked-in record as fallback.
+  const RPC = 'https://sepolia-rpc.giwa.io';
+  const TOKEN = '0x7F8f74494B18fC25fF9Dd5105Fb370ca193EC7b8';
+  async function rpc(method, params) {
+    const r = await fetch(RPC, { method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }) });
+    const j = await r.json();
+    return j.result;
+  }
+  (async () => {
+    try {
+      const blk = await rpc('eth_blockNumber', []);
+      document.getElementById('blk').textContent = parseInt(blk, 16).toLocaleString('en-US');
+      const sup = await rpc('eth_call', [{ to: TOKEN, data: '0x18160ddd' }, 'latest']);
+      const raw = BigInt(sup);
+      const whole = raw / 1000000000n;
+      const frac = (raw % 1000000000n).toString().padStart(9, '0');
+      document.getElementById('supply').textContent =
+        whole.toLocaleString('en-US') + '.' + frac + ' BSTK';
+    } catch (e) {
+      document.getElementById('blk').textContent = '42,104,196 (launch block)';
+      document.getElementById('supply').textContent = '1,000,200.080032016 BSTK';
+    }
+  })();
+</script>
+</body>
+</html>
